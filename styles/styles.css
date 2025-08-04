@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Destrozado"; /* Elige un nombre para tu fuente */
+  src: url(/Repo-portfolioLS/portfolio_LS/fonts/ABITE.ttf) format("truetype"); /* Ajusta la ruta y el formato */
+  font-weight: normal; /* Opcional: especifica el peso de la fuente */
+  font-style: normal; /* Opcional: especifica el estilo de la fuente */
+}
+
+@font-face {
+  font-family: "typewriter"; /* Elige un nombre para tu fuente */
+  src: url(/Repo-portfolioLS/portfolio_LS/fonts/ATypewriterForMe.ttf)
+    format("truetype"); /* Ajusta la ruta y el formato */
+  font-weight: normal; /* Opcional: especifica el peso de la fuente */
+  font-style: normal; /* Opcional: especifica el estilo de la fuente */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #6b5656;
+  color: #333;
+  min-width: 375px;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100vw;
+}
+
+/* ------------header----------------------*/
+.header_container {
+  margin: auto auto;
+  position: relative;
+  width: 100vw;
+  height: 200px;
+  min-width: 375px;
+  outline: 2px solid #1a1919;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background-color: #cecbcb;
+  color: #1a1919;
+  padding: 0;
+  text-align: center;
+}
+
+.h-elemento-1 {
+  grid-column: 1 / 2;
+  grid-row: 1/3;
+
+  margin-top: 55px;
+}
+.h-elemento-2 {
+  grid-column: 2 / 2;
+  grid-row: 1/3;
+
+  margin-top: 80px;
+}
+
+.h-elemento-1 h1 {
+  font-family: "Destrozado", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.8rem;
+  color: #363434;
+}
+
+.h-elemento-1 h5 {
+  margin-top: 15px;
+  font-family: "typewriter", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3rem;
+  color: black;
+}
+
+.h-elemento-2 .navbar-nav {
+  background-color: #cecbcb;
+  color: #1a1919;
+  display: flex;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  gap: 40px;
+}
+
+.h-elemento-2 .nav-link {
+  color: #1a1919;
+  font-weight: normal;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.h-elemento-2 .navbar {
+  margin-left: 200px;
+  background-color: #cecbcb;
+  color: #1a1919;
+}
+@media (max-width: 767px) {
+  .navbar-toggler .nav-link {
+    margin-left: auto;
+    transform: translateX(-250%);
+  }
+}
+
+/* ------------body----------------------*/
