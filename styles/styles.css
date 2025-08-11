@@ -304,7 +304,7 @@ html {
   grid-area: fotoLucas;
 
   width: 80%;
-  height: 60%;
+  height: 80%;
 
   display: flex;
   justify-content: center;
@@ -379,7 +379,7 @@ html {
   font-family: typewriter, sans-serif;
   font-size: 1.5rem;
   color: #1a1919;
-  margin-top: 5px;
+  margin-top: 1rem;
   text-align: center;
 }
 
@@ -426,6 +426,35 @@ html {
   box-shadow: #1a1919 0px 0px 10px;
   margin-top: 0.8rem;
   margin-left: 0.5rem;
+}
+
+.emp-section h3 {
+  font-family: typewriter, sans-serif;
+  font-size: 1.5rem;
+  color: #1a1919;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.emp-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.emp-section li {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emp-section img {
+  width: 7rem;
+  height: 7rem;
+  box-shadow: #1a1919 0px 0px 10px;
 }
 
 .hobb-section {
@@ -819,7 +848,7 @@ html {
     grid-area: fotoLucas;
 
     width: 75%;
-    height: 40%;
+    height: 60%;
 
     display: flex;
     justify-content: center;
