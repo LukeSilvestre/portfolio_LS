@@ -13,6 +13,28 @@
   font-style: normal; /* Opcional: especifica el estilo de la fuente */
 }
 
+:root {
+  --header-height: 200px;
+  width: auto;
+  background-color: yellow;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --header-height: 100px;
+    width: auto;
+    background-color: green;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  :root {
+    --header-height: 120px;
+    width: 100%;
+    background-color: blue;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,23 +44,27 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #6b5656;
   color: #333;
-  min-width: 375px;
+  min-width: 320px;
+  max-width: auto;
+
+  scroll-padding-top: var(--header-height);
 }
 
 html {
   scroll-behavior: smooth;
-  width: 100vw;
+  width: 100%;
 }
 
 /* ------------header----------------------*/
+
+/* Para dispositivos mayores a 1023px */
 .header_container {
   margin: auto auto;
-  position: relative;
-  width: 100vw;
-  height: 200px;
-  min-width: 375px;
+  position: fixed;
+  width: 100%;
+  height: var(--header-height);
+  min-width: 320px;
   outline: 2px solid #1a1919;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -53,13 +79,21 @@ html {
   grid-column: 1 / 2;
   grid-row: 1/3;
 
-  margin-top: 55px;
+  margin-top: 3%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 .h-elemento-2 {
   grid-column: 2 / 2;
   grid-row: 1/3;
 
-  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-top: 8%;
 }
 
 .h-elemento-1 h1 {
@@ -89,19 +123,892 @@ html {
 .h-elemento-2 .nav-link {
   color: #1a1919;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 0.8rem;
   white-space: nowrap;
 }
 .h-elemento-2 .navbar {
-  margin-left: 200px;
+  margin-left: 5rem;
   background-color: #cecbcb;
   color: #1a1919;
 }
-@media (max-width: 767px) {
-  .navbar-toggler .nav-link {
+.h-elemento-2 .navbar-toggler {
+  margin-left: auto;
+  transform: translateX(-250%);
+}
+
+/* Para dispositivos menores o iguales a 768px */
+@media screen and (max-width: 768px) {
+  /* Para pantallas pequeñas */
+  .h-elemento-1 {
+    margin-top: 3%;
+    margin-left: auto;
+    max-width: 100%;
+  }
+  .h-elemento-1 h1 {
+    font-family: "Destrozado", sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    color: #363434;
+  }
+  .h-elemento-1 h5 {
+    margin-top: 15px;
+    font-family: "typewriter", sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3rem;
+    color: black;
+  }
+  .h-elemento-2 {
+    margin-top: 7%;
+    margin-left: auto;
+    width: 100%;
+    display: none;
+  }
+  .navbar-toggler .nav-link .navbar .navbar-expand-xl {
     margin-left: auto;
     transform: translateX(-250%);
+  }
+  .header_container {
+    margin: auto auto;
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    min-width: 320px;
+    outline: 2px solid #1a1919;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #cecbcb;
+    color: #1a1919;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  /* Para pantallas medianas */
+  .h-elemento-1 {
+    grid-column: 1 / 2;
+    grid-row: 1/3;
+
+    margin-top: 0.5%;
+    margin-left: auto;
+    max-width: 100%;
+  }
+  .h-elemento-1 h1 {
+    font-family: "Destrozado", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    color: #363434;
+  }
+  .h-elemento-1 h5 {
+    margin-top: 0.5%;
+    font-family: "typewriter", sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3rem;
+    color: black;
+  }
+
+  .h-elemento-2 {
+    grid-column: 2 / 2;
+    grid-row: 1/3;
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 40%;
+    margin-top: 8%;
+  }
+  .navbar-toggler .nav-link .navbar-collapse {
+    transform: translateX(-250%);
+  }
+
+  .navbar-toggler .nav-link .navbar .navbar-expand-xl {
+    margin-left: 20%; /* ojo acá */
+  }
+  .navbar-collapse {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .h-elemento-2 .nav-link {
+    color: #1a1919;
+    font-weight: normal;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .h-elemento-2 .navbar {
+    margin-left: auto;
+    background-color: #cecbcb;
+    color: #1a1919;
+  }
+  .header_container {
+    margin: auto auto;
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    min-width: 320px;
+    outline: 2px solid #1a1919;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: #cecbcb;
+    color: #1a1919;
+    padding: 0;
+    text-align: center;
   }
 }
 
 /* ------------body----------------------*/
+
+.about-section {
+  grid-area: sobremi;
+
+  width: 95%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  box-shadow: #1a1919 0px 0px 10px;
+}
+
+.about-section h2 {
+  font-family: typewriter, sans-serif;
+  font-size: 2.4rem;
+  color: #1a1919;
+  margin-top: 60px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.about-section h2:hover {
+  font-family: typewriter, sans-serif;
+  font-size: 3rem;
+  color: #ff0000;
+  margin-top: 60px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  font-family: typewriter, sans-serif;
+  font-size: 1rem;
+  color: #1a1919;
+  margin-top: 4%;
+  text-align: center;
+}
+
+.fotoLucas {
+  grid-area: fotoLucas;
+
+  width: 80%;
+  height: 60%;
+
+  display: flex;
+  justify-content: center;
+  margin-top: 0.7rem;
+  margin-left: 3.5rem;
+  margin-right: 1rem;
+  margin-bottom: 5px;
+  box-shadow: #1a1919 0px 0px 10px;
+}
+
+.fotoLucas img {
+  margin-top: 3.5%;
+  margin-bottom: 1%;
+  border-radius: 30%;
+  width: 80%;
+  height: 90%;
+}
+
+.fotoLucas:hover img {
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-section {
+  grid-area: skill;
+
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0.8rem;
+  box-shadow: #1a1919 0px 0px 10px;
+}
+
+.skill-section h3 {
+  margin-top: 2rem;
+  font-family: typewriter, sans-serif;
+  font-size: 1.5rem;
+  color: #1a1919;
+  text-align: center;
+}
+
+.skill-section p {
+  font-family: typewriter, sans-serif;
+  font-size: 0.9rem;
+  color: #1a1919;
+  margin-top: 20px;
+  text-align: right;
+  margin-right: 5px;
+}
+.skill-section li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exp-section {
+  grid-area: exper;
+
+  width: 91.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #1a1919 0px 0px 10px;
+  margin-top: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.exp-section h3 {
+  font-family: typewriter, sans-serif;
+  font-size: 1.5rem;
+  color: #1a1919;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.exper p {
+  font-family: typewriter, sans-serif;
+  font-size: 0.9rem;
+  color: #1a1919;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.proy-section {
+  grid-area: pry;
+
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #1a1919 0px 0px 10px;
+  margin-top: 0.8rem;
+}
+
+.proy-section h3 {
+  font-family: typewriter, sans-serif;
+  font-size: 1.5rem;
+  color: #1a1919;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.proy-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.emp-section {
+  grid-area: emp;
+
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #1a1919 0px 0px 10px;
+  margin-top: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.hobb-section {
+  grid-area: hobb;
+
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #1a1919 0px 0px 10px;
+  margin-top: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.hobb-section h3 {
+  font-family: typewriter, sans-serif;
+  font-size: 1.5rem;
+  color: #1a1919;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.hobb-section p {
+  font-family: typewriter, sans-serif;
+  font-size: 0.9rem;
+  color: #1a1919;
+  margin-top: 3%;
+  text-align: center;
+}
+
+.cont-section {
+  grid-area: contac;
+
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  /* Para pantallas grandes */
+  .main_container {
+    padding-top: var(--header-height);
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "fotoLucas fotoLucas sobremi sobremi sobremi"
+      "fotoLucas fotoLucas skill   exper   exper"
+      ".          .        pry     emp     ."
+      ".          .        hobb    .       ."
+      "contac     contac   contac  contac  contac";
+    background-image: linear-gradient(
+      to right top,
+      #be8f6d,
+      #c09a79,
+      #c3a686,
+      #c5b094,
+      #c9bba3,
+      #c6b79f,
+      #c3b49a,
+      #c0b096,
+      #b69d7e,
+      #ac8a68,
+      #a37753,
+      #9a6441
+    );
+  }
+}
+
+@media (max-width: 768px) {
+  /* Para pantallas chicas */
+  .about-section {
+    grid-area: sobremi;
+
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+    box-shadow: #1a1919 0px 0px 10px;
+  }
+
+  .about-section h2 {
+    font-family: typewriter, sans-serif;
+    font-size: 2.4rem;
+    color: #1a1919;
+    margin-top: 2%;
+    margin-left: 2%;
+    text-align: center;
+  }
+
+  .about-section p {
+    font-family: typewriter, sans-serif;
+    font-size: 1rem;
+    color: #1a1919;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .fotoLucas {
+    grid-area: fotoLucas;
+
+    width: 95%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+
+    margin-bottom: 5px;
+    box-shadow: #1a1919 0px 0px 10px;
+  }
+
+  .fotoLucas img {
+    margin-top: 2%;
+    border-radius: 30%;
+    max-width: 60%;
+    height: auto;
+  }
+  .skill-section {
+    grid-area: skill;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+    box-shadow: #1a1919 0px 0px 10px;
+  }
+
+  .skill-section h3 {
+    font-family: typewriter, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 2%;
+    color: #1a1919;
+    text-align: center;
+  }
+
+  .skill-section ul {
+    list-style: outside;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .skill-section li {
+    list-style: disc;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .skill-section p {
+    font-family: typewriter, sans-serif;
+    font-size: 0.9rem;
+    color: #1a1919;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 5px;
+  }
+
+  .exp-section {
+    grid-area: exper;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #1a1919 0px 0px 10px;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .exp-section h3 {
+    font-family: typewriter, sans-serif;
+    font-size: 1.5rem;
+    color: #1a1919;
+    margin-top: 2%;
+    text-align: center;
+  }
+
+  .exper p {
+    font-family: typewriter, sans-serif;
+    font-size: 0.9rem;
+    color: #1a1919;
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  .proy-section {
+    grid-area: pry;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #1a1919 0px 0px 10px;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .proy-section h3 {
+    font-family: typewriter, sans-serif;
+    font-size: 1.5rem;
+    color: #1a1919;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .proy-section ul {
+    list-style: disc outside;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .proy-section li {
+    padding-left: 0;
+  }
+
+  .proy-section p {
+    font-family: typewriter, sans-serif;
+    font-size: 0.9rem;
+    color: #1a1919;
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  .emp-section {
+    grid-area: emp;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #1a1919 0px 0px 10px;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+  }
+  .emp-section h3 {
+    font-family: typewriter, sans-serif;
+    font-size: 1.5rem;
+    color: #1a1919;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .emp-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .emp-section li {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .emp-section img {
+    width: 7rem;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: #1a1919 0px 0px 10px;
+    background-color: burlywood;
+  }
+
+  .hobb-section {
+    grid-area: hobb;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #1a1919 0px 0px 10px;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+    margin-bottom: 10px;
+  }
+
+  .hobb-section h3 {
+    font-family: typewriter, sans-serif;
+    font-size: 1.5rem;
+    color: #1a1919;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .hobb-section p {
+    font-family: typewriter, sans-serif;
+    font-size: 0.9rem;
+    color: #1a1919;
+    margin-top: 3%;
+    text-align: center;
+  }
+  .cont-section {
+    grid-area: contac;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: whitesmoke;
+  }
+
+  .main_container {
+    padding-top: var(--header-height);
+    display: grid;
+    width: 100%;
+
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(9, auto);
+    grid-template-areas:
+      "fotoLucas"
+      "fotoLucas"
+      "sobremi  "
+      "skill    "
+      "exper    "
+      "pry      "
+      "emp      "
+      "hobb     "
+      "contac   ";
+    background-image: linear-gradient(
+      to right top,
+      #be8f6d,
+      #c09a79,
+      #c3a686,
+      #c5b094,
+      #c9bba3,
+      #c6b79f,
+      #c3b49a,
+      #c0b096,
+      #b69d7e,
+      #ac8a68,
+      #a37753,
+      #9a6441
+    );
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  /* Para pantallas medianas */
+  .about-section {
+    grid-area: sobremi;
+
+    width: 95%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    box-shadow: #1a1919 0px 0px 10px;
+  }
+
+  .about-section h2 {
+    font-family: typewriter, sans-serif;
+    font-size: 2.4rem;
+    color: #1a1919;
+    margin-top: 60px;
+    margin-left: 20px;
+    text-align: center;
+  }
+
+  .about-section h2:hover {
+    font-family: typewriter, sans-serif;
+    font-size: 3rem;
+    color: #ff0000;
+    margin-top: 60px;
+    margin-left: 20px;
+    text-align: center;
+  }
+
+  .about-section p {
+    font-family: typewriter, sans-serif;
+    font-size: 1rem;
+    color: #1a1919;
+    margin-top: 4%;
+    text-align: center;
+  }
+
+  .fotoLucas {
+    grid-area: fotoLucas;
+
+    width: 75%;
+    height: 40%;
+
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8rem;
+    margin-left: 10%;
+    margin-right: 1rem;
+    margin-bottom: 5px;
+    box-shadow: #1a1919 0px 0px 10px;
+  }
+
+  .fotoLucas img {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 30%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .fotoLucas:hover img {
+    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .skill-section {
+    grid-area: skill;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0.8rem;
+    box-shadow: #1a1919 0px 0px 10px;
+  }
+
+  .skill-section h3 {
+    margin-top: 2rem;
+    font-family: typewriter, sans-serif;
+    font-size: 1.5rem;
+    color: #1a1919;
+    text-align: center;
+  }
+
+  .skill-section p {
+    font-family: typewriter, sans-serif;
+    font-size: 0.9rem;
+    color: #1a1919;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 5px;
+  }
+  .skill-section li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .exp-section {
+    grid-area: exper;
+
+    width: 91.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #1a1919 0px 0px 10px;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .exp-section h3 {
+    font-family: typewriter, sans-serif;
+    font-size: 1.5rem;
+    color: #1a1919;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .exper p {
+    font-family: typewriter, sans-serif;
+    font-size: 0.9rem;
+    color: #1a1919;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .proy-section {
+    grid-area: pry;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #1a1919 0px 0px 10px;
+    margin-top: 0.8rem;
+  }
+
+  .proy-section h3 {
+    font-family: typewriter, sans-serif;
+    font-size: 1.5rem;
+    color: #1a1919;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .proy-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .emp-section {
+    grid-area: emp;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #1a1919 0px 0px 10px;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .hobb-section {
+    grid-area: hobb;
+
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #1a1919 0px 0px 10px;
+    margin-top: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .hobb-section h3 {
+    font-family: typewriter, sans-serif;
+    font-size: 1.5rem;
+    color: #1a1919;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .hobb-section p {
+    font-family: typewriter, sans-serif;
+    font-size: 0.9rem;
+    color: #1a1919;
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  .cont-section {
+    grid-area: contac;
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: whitesmoke;
+  }
+
+  /* Para pantallas medias */
+  .main_container {
+    padding-top: var(--header-height);
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "fotoLucas fotoLucas sobremi sobremi sobremi"
+      "fotoLucas fotoLucas skill   exper   exper"
+      ".          .        pry     emp     ."
+      ".          .        hobb    .       ."
+      "contac     contac   contac  contac  contac";
+    background-image: linear-gradient(
+      to right top,
+      #be8f6d,
+      #c09a79,
+      #c3a686,
+      #c5b094,
+      #c9bba3,
+      #c6b79f,
+      #c3b49a,
+      #c0b096,
+      #b69d7e,
+      #ac8a68,
+      #a37753,
+      #9a6441
+    );
+  }
+}

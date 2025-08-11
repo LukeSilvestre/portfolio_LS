@@ -1,0 +1,356 @@
+@font-face {
+  font-family: "Destrozado"; /* Elige un nombre para tu fuente */
+  src: url(/Repo-portfolioLS/portfolio_LS/fonts/ABITE.ttf) format("truetype"); /* Ajusta la ruta y el formato */
+  font-weight: normal; /* Opcional: especifica el peso de la fuente */
+  font-style: normal; /* Opcional: especifica el estilo de la fuente */
+}
+
+@font-face {
+  font-family: "typewriter"; /* Elige un nombre para tu fuente */
+  src: url(/Repo-portfolioLS/portfolio_LS/fonts/ATypewriterForMe.ttf)
+    format("truetype"); /* Ajusta la ruta y el formato */
+  font-weight: normal; /* Opcional: especifica el peso de la fuente */
+  font-style: normal; /* Opcional: especifica el estilo de la fuente */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 100px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  min-width: 320px;
+  scroll-padding-top: var(--header-height);
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100vw;
+}
+
+/* ------------header----------------------*/
+
+.h-elemento-1 {
+  grid-column: 1 / 2;
+  grid-row: 1/3;
+
+  margin-top: 7%;
+  margin-left: 20%;
+}
+.h-elemento-2 {
+  grid-column: 2 / 2;
+  grid-row: 1/3;
+
+  margin-top: 80px;
+}
+
+.h-elemento-1 h1 {
+  font-family: "Destrozado", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.8rem;
+  color: #363434;
+}
+
+.h-elemento-1 h5 {
+  margin-top: 15px;
+  font-family: "typewriter", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3rem;
+  color: black;
+}
+
+.h-elemento-2 .navbar-nav {
+  background-color: #cecbcb;
+  color: #1a1919;
+  display: flex;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  gap: 40px;
+}
+
+.h-elemento-2 .nav-link {
+  color: #1a1919;
+  font-weight: normal;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.h-elemento-2 .navbar {
+  margin-left: 200px;
+  background-color: #cecbcb;
+  color: #1a1919;
+}
+@media (min-width: 320px) and (max-width: 425px) {
+  /* Para pantallas pequeñas */
+  .h-elemento-2 {
+    display: none;
+  }
+  .navbar-toggler .nav-link {
+    margin-left: auto;
+    transform: translateX(-250%);
+  }
+}
+
+@media (min-width: 768px) {
+  /* Para pantallas pequeñas */
+  .header_container {
+    margin: auto auto;
+    position: relative;
+    width: 100vw;
+    height: var(--header-height);
+    min-width: 320px;
+    outline: 2px solid #1a1919;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: #cecbcb;
+    color: #1a1919;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+/* ------------body----------------------*/
+
+.about-section {
+  grid-area: sobremi;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  box-shadow: #1a1919 0px 0px 10px;
+}
+
+.about-section h2 {
+  font-family: typewriter, sans-serif;
+  font-size: 2.4rem;
+  color: #1a1919;
+  margin-top: 60px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.about-section h2:hover {
+  font-family: typewriter, sans-serif;
+  font-size: 3rem;
+  color: #ff0000;
+  margin-top: 60px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  font-family: typewriter, sans-serif;
+  font-size: 1rem;
+  color: #1a1919;
+  margin-top: 65px;
+  text-align: center;
+}
+
+.fotoLucas {
+  grid-area: fotoLucas;
+
+  display: flex;
+  justify-content: center;
+  align-items: top;
+}
+@media (min-width: 768px) {
+  .fotoLucas img {
+    margin-top: 5%;
+    object-fit: cover;
+    border-radius: 30%;
+  }
+  .fotoLucas img:hover {
+    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 767px) {
+  .fotoLucas img {
+    margin-top: 5%;
+    border-radius: 30%;
+    width: 300px;
+    height: 200px;
+  }
+}
+
+.skill-section {
+  grid-area: skill;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  box-shadow: #1a1919 0px 0px 10px;
+}
+
+.skill-section h3 {
+  font-family: typewriter, sans-serif;
+  font-size: 1.5rem;
+  color: #1a1919;
+  text-align: center;
+}
+
+.skill-section p {
+  font-family: typewriter, sans-serif;
+  font-size: 0.9rem;
+  color: #1a1919;
+  margin-top: 20px;
+  text-align: right;
+  margin-right: 5px;
+}
+.skill-section li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exp-section {
+  grid-area: exper;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #1a1919 0px 0px 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.exp-section h3 {
+  font-family: typewriter, sans-serif;
+  font-size: 1.5rem;
+  color: #1a1919;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.exper p {
+  font-family: typewriter, sans-serif;
+  font-size: 0.9rem;
+  color: #1a1919;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.proy-section {
+  grid-area: pry;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proy-section h3 {
+  font-family: typewriter, sans-serif;
+  font-size: 1.5rem;
+  color: #1a1919;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.proy-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hobb-section {
+  grid-area: hobb;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont-section {
+  grid-area: contac;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+@media (min-width: 768px) {
+  /* Para pantallas grandes */
+  .main_container {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "fotoLucas fotoLucas sobremi sobremi sobremi"
+      "fotoLucas fotoLucas skill   exper   exper"
+      ".          .        pry     .       ."
+      ".          .        hobb    .       ."
+      "contac  contac  contac  contac      contac";
+    background-image: linear-gradient(
+      to right top,
+      #be8f6d,
+      #c09a79,
+      #c3a686,
+      #c5b094,
+      #c9bba3,
+      #c6b79f,
+      #c3b49a,
+      #c0b096,
+      #b69d7e,
+      #ac8a68,
+      #a37753,
+      #9a6441
+    );
+  }
+}
+
+@media (max-width: 767px) {
+  /* Para pantallas pequeñas */
+  .main_container {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(2, 35%);
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+      "fotoLucas fotoLucas"
+      "fotoLucas fotoLucas"
+      "sobremi   sobremi"
+      "skill     .      "
+      "exper     exper  "
+      "pry       .      "
+      "hobb      .      ";
+    background-image: linear-gradient(
+      to right top,
+      #be8f6d,
+      #c09a79,
+      #c3a686,
+      #c5b094,
+      #c9bba3,
+      #c6b79f,
+      #c3b49a,
+      #c0b096,
+      #b69d7e,
+      #ac8a68,
+      #a37753,
+      #9a6441
+    );
+  }
+}
