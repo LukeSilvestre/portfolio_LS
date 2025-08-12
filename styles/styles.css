@@ -492,12 +492,16 @@ html {
   height: auto;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
   background-color: whitesmoke;
 }
 
+.cont-section img {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+/* ------------- Para pantallas grandes -----------------*/
 @media (min-width: 1441px) and (max-width: 2560px) {
-  /* Para pantallas grandes */
   .main_container {
     padding-top: var(--header-height);
     display: grid;
@@ -528,8 +532,8 @@ html {
   }
 }
 
+/* ------------- Para pantallas chicas -----------------*/
 @media (max-width: 768px) {
-  /* Para pantallas chicas */
   .about-section {
     grid-area: sobremi;
 
@@ -803,8 +807,8 @@ html {
   }
 }
 
+/* ------------- Para pantallas medianas -----------------*/
 @media screen and (min-width: 769px) and (max-width: 1440px) {
-  /* Para pantallas medianas */
   .about-section {
     grid-area: sobremi;
 
@@ -847,13 +851,13 @@ html {
   .fotoLucas {
     grid-area: fotoLucas;
 
-    width: 75%;
+    width: 85%;
     height: 60%;
 
     display: flex;
     justify-content: center;
     margin-top: 0.8rem;
-    margin-left: 10%;
+    margin-left: 8%;
     margin-right: 1rem;
     margin-bottom: 5px;
     box-shadow: #1a1919 0px 0px 10px;
@@ -1007,8 +1011,13 @@ html {
     height: auto;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     background-color: whitesmoke;
+  }
+
+  .cont-section img {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   /* Para pantallas medias */
